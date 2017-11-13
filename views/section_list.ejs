@@ -1,0 +1,30 @@
+<h1>Sections</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Number</th>
+			<th>Course</th>
+			<th>Professor</th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% sections.forEach(function(section){ %>
+		<tr>
+			<td><%= section.title %></td>
+			<td><%= section.body %></td>
+        	<td><%= section.bodys %></td>
+        	<td>
+        		<a href="/sections/edit/<%=section.id %>" class="btn btn-primary">Edit</a>
+        		<form class="d-inline" action="/sections/delete/<%=section.id %>" method="post">
+        			<input type="submit" value="Delete" class="btn btn-danger">        			
+        		</form>
+        	</td>
+        </tr>
+	<% }) %>
+	</tbody>
+</table>
+
+<a href="/sections/add">Add Section</a>

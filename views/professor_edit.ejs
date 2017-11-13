@@ -1,0 +1,15 @@
+<h1>Edit Professor</h1>
+<form method="post" action="/professors/update/<%= professor.id %>"
+	<div class="form group">
+		<label for="title">Name</label>
+		<input type="text" name="title" class="form-control" value="<%= professor.title %>">
+	</div>
+	<div class="form group">
+		<label for="body">Section</label>
+		<input type="text" name="body" class="form-control" value="<%= professor.body %>">
+	</div>
+	<div>
+		<input type="submit" value="Submit" class="btn btn primary">
+	</div>
+
+</form>

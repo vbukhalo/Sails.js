@@ -1,0 +1,28 @@
+<h1>Professors</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Professor Name</th>
+			<th>Professor Section</th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% professors.forEach(function(professor){ %>
+		<tr>
+			<td><%= professor.title %></td>
+        	<td><%= professor.body %></td>
+        	<td>
+        		<a href="/professors/edit/<%=professor.id %>" class="btn btn-primary">Edit</a>
+        		<form class="d-inline" action="/professors/delete/<%=professor.id %>" method="post">
+        			<input type="submit" value="Delete" class="btn btn-danger">        			
+        		</form>
+        	</td>
+        </tr>
+	<% }) %>
+	</tbody>
+</table>
+
+<a href="/professors/add">Add Professor</a>

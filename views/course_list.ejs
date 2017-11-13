@@ -1,0 +1,28 @@
+<h1>Courses</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Course Name</th>
+			<th>Course Section</th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% courses.forEach(function(course){ %>
+		<tr>
+			<td><%= course.title %></td>
+        	<td><%= course.body %></td>
+        	<td>
+        		<a href="/courses/edit/<%=course.id %>" class="btn btn-primary">Edit</a>
+        		<form class="d-inline" action="/courses/delete/<%=course.id %>" method="post">
+        			<input type="submit" value="Delete" class="btn btn-danger">        			
+        		</form>
+        	</td>
+        </tr>
+	<% }) %>
+	</tbody>
+</table>
+
+<a href="/courses/add">Add Course</a>
