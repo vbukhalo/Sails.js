@@ -20,10 +20,10 @@ module.exports = {
 	},
 
 	create:function(req, res){
-		var title = req.body.title;
-		var body = req.body.body;
+		var name = req.body.name;
+		var section = req.body.section;
 
-		Professors.create({title:title, body:body}).exec(function(err){
+		Professors.create({name:name, section:section}).exec(function(err){
 			if(err){
 				res.send(500, {error: 'Database Error'});
 			}
@@ -51,10 +51,10 @@ module.exports = {
 		});
 	},
 	update:function(req, res){
-		var title = req.body.title;
-		var body = req.body.body;
+		var name = req.body.name;
+		var section = req.body.section;
 
-		Professors.update({id: req.params.id},{title:title, body:body}).exec(function(err){
+		Professors.update({id: req.params.id},{name:name, section:section}).exec(function(err){
 			if(err){
 				res.send(500, {error: 'Database Error'});
 			}

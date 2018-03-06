@@ -13,9 +13,9 @@
 	<tbody>
 		<% sections.forEach(function(section){ %>
 		<tr>
-			<td><%= section.title %></td>
-			<td><%= section.body %></td>
-        	<td><%= section.bodys %></td>
+			<td><%= section.number %></td>
+			<td><%= section.course.name %></td>
+        	<td><%= section.professor.name %></td>
         	<td>
         		<a href="/sections/edit/<%=section.id %>" class="btn btn-primary">Edit</a>
         		<form class="d-inline" action="/sections/delete/<%=section.id %>" method="post">

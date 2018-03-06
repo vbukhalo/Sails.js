@@ -3,6 +3,7 @@
 <table>
 	<thead>
 		<tr>
+			<th>ID</th>
 			<th>Course Name</th>
 			<th>Course Section</th>
 			<th></th>
@@ -12,8 +13,9 @@
 	<tbody>
 		<% courses.forEach(function(course){ %>
 		<tr>
-			<td><%= course.title %></td>
-        	<td><%= course.body %></td>
+			<td><%= course.id %></td>
+			<td><%= course.name %></td>
+        	<td><%= course.section %></td>
         	<td>
         		<a href="/courses/edit/<%=course.id %>" class="btn btn-primary">Edit</a>
         		<form class="d-inline" action="/courses/delete/<%=course.id %>" method="post">

@@ -8,6 +8,10 @@
 module.exports = {
 
   attributes: {
+  	number: {type: 'integer'},
+
+  	course: {model: 'courses'},
+  	professor: {model: 'professors'}
 
   }
 };

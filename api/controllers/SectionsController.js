@@ -7,7 +7,7 @@
 
 module.exports = {
 	sections:function(req, res){
-		Sections.find({}).exec(function(err, sections){
+		Sections.find({}).populate('course').populate('professor').exec(function(err, sections){
 			if(err){
 				res.send(500,{error: 'Database Error'});
 			}
@@ -20,11 +20,11 @@ module.exports = {
 	},
 
 	create:function(req, res){
-		var title = req.body.title;
-		var body = req.body.body;
-		var bodys = req.body.bodys;
+		var number = req.body.number;
+		var course = req.body.course;
+		var professor = req.body.professor;
 
-		Sections.create({title:title, body:body, bodys:bodys}).exec(function(err){
+		Sections.create({number:number, course:course, professor:professor}).exec(function(err){
 			if(err){
 				res.send(500, {error: 'Database Error'});
 			}
@@ -45,7 +45,7 @@ module.exports = {
 		return false;
 	},
 	edit: function(req, res){
-		Sections.findOne({id:req.params.id}).exec(function(err, section){
+		Sections.findOne({id:req.params.id}).populate('course').populate('professor').exec(function(err, section){
 			if (err) {
 				res.send(500, {error: 'Database Error'});
 			}
@@ -53,11 +53,11 @@ module.exports = {
 		});
 	},
 	update:function(req, res){
-		var title = req.body.title;
-		var body = req.body.body;
-		var bodys = req.body.bodys;
+		var number = req.body.number;
+		var course = req.body.course;
+		var professor = req.body.professor;
 
-		Sections.update({id: req.params.id},{title:title, body:body, bodys:bodys}).exec(function(err){
+		Sections.update({id: req.params.id},{number:number, course:course, professor:professor}).exec(function(err){
 			if(err){
 				res.send(500, {error: 'Database Error'});
 			}
@@ -67,5 +67,5 @@ module.exports = {
 
 		return false;
 	}
+	
 };
-

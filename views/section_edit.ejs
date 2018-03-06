@@ -1,17 +1,17 @@
 <h1>Edit Section</h1>
 <form method="post" action="/sections/update/<%= section.id %>">
 	<div class="form group">
-		<label for="title">Number</label>
-		<input type="text" name="title" class="form-control" value="<%=section.title %>">
+		<label for="number">Number</label>
+		<input type="text" name="number" class="form-control" value="<%=section.number %>">
 	</div>
 	<div class="form group">
-		<label for="body">Course</label>
-		<input type="text" name="body" class="form-control" value="<%=section.body %>">
+		<label for="course">Course</label>
+		<input type="text" name="course" class="form-control" value="<%=section.course.id %>">
 	</div>
 
 	<div class="form group">
-		<label for="bodys">Professor</label>
-		<input type="text" name="bodys" class="form-control" value="<%=section.bodys %>">
+		<label for="professor">Professor</label>
+		<input type="text" name="professor" class="form-control" value="<%=section.professor.id %>">
 	</div>
 
 	<div>

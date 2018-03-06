@@ -3,6 +3,7 @@
 <table>
 	<thead>
 		<tr>
+			<th>ID</th>
 			<th>Professor Name</th>
 			<th>Professor Section</th>
 			<th></th>
@@ -12,8 +13,9 @@
 	<tbody>
 		<% professors.forEach(function(professor){ %>
 		<tr>
-			<td><%= professor.title %></td>
-        	<td><%= professor.body %></td>
+			<td><%= professor.id %></td>
+			<td><%= professor.name %></td>
+        	<td><%= professor.section %></td>
         	<td>
         		<a href="/professors/edit/<%=professor.id %>" class="btn btn-primary">Edit</a>
         		<form class="d-inline" action="/professors/delete/<%=professor.id %>" method="post">
